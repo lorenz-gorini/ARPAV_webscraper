@@ -107,19 +107,7 @@ class ArpavArchiveScraper:
                                             date=date)
                                   )
 
-
-        #
-        #
-        # column_locations = []
-        # xpath_data =  "/html/body/div[1]/table/tbody/tr/td[2]/div/div/div[2]/div/div/div/table/tbody/tr[4]/td[7]"
-        # xpath_cityname = "/html/body/div[1]/table/tbody/tr/td[2]/div/div/div[2]/div/div/div/table/tbody/tr/td[2]/strong"
-        #
-        # "/html/body/div[1]/table/tbody/tr/td[2]/div/div/div[2]/div/div/div/table/tbody/tr[4]/td[7]"
-        #
-        # "/html/body/div[1]/table/tbody/tr/td[2]/div/div/div[2]/div/div/div/table/tbody/tr[2]/td[1]/span/a"
-        # column_locations.index("PM10")
-
-        webdriver.find_element_by_xpath("//td[@title='Polveri (PM10)']")
+        print(f"Done extracting table values for date: {date}")
 
     def _set_values_combo_box(self, city_name, date: datetime):
         #date.strftime('%d-%m-%y')
