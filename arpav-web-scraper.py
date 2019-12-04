@@ -2,6 +2,8 @@ import requests
 from datetime import datetime
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+
 
 class TableCell:
 
@@ -49,47 +51,62 @@ class ArpavArchiveScraper:
         pollutant_list = [{'text': t.text, 'x': t.location['x']} for t in
                           self.driver.find_elements_by_xpath("//div[@id='ariadativalidati']/table/tbody/tr[1]/td")]
         # TODO Change the value of text so it can use the value of the child! that should be  ./span/a  . How can we do that?
-        measurement_info = [{'text': t.text, #self.driver.find_elements_by_xpath("//div[@id='ariadativalidati']/table/tbody/tr[2]/td"),
+        measurement_info = [{'text': t.find_element_by_tag_name("a").text,
                              'x': t.location['x']} for t in
-                            self.driver.find_elements_by_xpath("//div[@id='ariadativalidati']/table/tbody/tr[2]/td")] # /span/a
+                            self.driver.find_elements_by_xpath("//div[@id='ariadativalidati']/table/tbody/tr[2]/td")]
         # Reorganize the measurement_infos (like "max ora"/"media giorn."/... ) according
         # to the category and the pollutant they belong to
-        for i in range(len(measurement_info)-1):
+        for i in range(len(measurement_info)):
             for j in range(len(pollutant_list)):
-                if pollutant_list[j]['x'] <= measurement_info[i]['x'] < pollutant_list[j + 1]['x']:
+                try:
+                    if pollutant_list[j]['x'] <= measurement_info[i]['x'] < pollutant_list[j + 1]['x']:
+                        measurement_info[i]['pollutant'] = pollutant_list[j]['text']
+                        break
+                except IndexError:
+                    # This is happening for the last elements belonging to the last pollutant (where
+                    # there is no further measurement_info[j + 1])
                     measurement_info[i]['pollutant'] = pollutant_list[j]['text']
                     break
-        measurement_info[-1]['pollutant'] = pollutant_list[-1]['text']
 
+        # ======== PART 2
         measurement_units = [{'meas_units': t.text, 'x': t.location['x']}  for t in
                              self.driver.find_elements_by_xpath("//div[@id='ariadativalidati']/table/tbody/tr[3]/td")]
         # Reorganize the measurement_units (like conc./ora/sup ) according to the category and the pollutant they belong to
-        for i in range(len(measurement_units)-1):
+        for i in range(len(measurement_units)):
             for j in range(len(measurement_info)):
-                if measurement_info[j]['x'] <= measurement_units[i]['x'] < measurement_info[j + 1]['x']:
+                try:
+                    if measurement_info[j]['x'] <= measurement_units[i]['x'] < measurement_info[j + 1]['x']:
+                        measurement_units[i]['meas_info'] = measurement_info[j]['text']
+                        measurement_units[i]['pollutant'] = measurement_info[j]['pollutant']
+                        break
+                except IndexError:
+                    # This is happening for the last elements belonging to the last pollutant (where
+                    # there is no further measurement_info[j + 1])
                     measurement_units[i]['meas_info'] = measurement_info[j]['text']
                     measurement_units[i]['pollutant'] = measurement_info[j]['pollutant']
                     break
-        measurement_units[-1]['meas_info'] = measurement_info[-1]['text']
-        measurement_units[-1]['pollutant'] = measurement_info[-1]['pollutant']
-
+        # The first three columns of measurement units are only metadata and we can discard them
+        del measurement_units[:3]
         cityname_list = [t.text for t in self.driver.find_elements_by_xpath("//div[@id='ariadativalidati']/table/tbody/tr/td[2]/strong")]
         table_data = []
         # TODO: Think how we can arrange the table values in a good structure.
         #   Maybe a csv file that can be easily accessed by pandas???
+
+        # ======== PART 3: Cell Values
         for i in range(len(measurement_units)):
             for j in range(len(cityname_list)):
                 # I have to add 4 to row and col index because the indexing starts from 1 and because the
                 # first 3 rows and columns are metadata
                 cell_value = self.driver.find_elements_by_xpath(f"//div[@id='ariadativalidati']/table/tbody/tr[{j+4}]/td[{i+4}]")[0]
-                table_data.append(TableCell(cell_value=cell_value,
+                table_data.append(TableCell(cell_value=cell_value.text,
                                             pollutant=measurement_units[i]['pollutant'],
                                             meas_info=measurement_units[i]['meas_info'],
                                             meas_unit=measurement_units[i]['meas_units'],
-                                            station_name=station_name,
+                                            station_name=cityname_list[j],
                                             city_name=city_name,
                                             date=date)
                                   )
+
 
         #
         #
