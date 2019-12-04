@@ -110,7 +110,7 @@ class ArpavArchiveScraper:
         print(f"Done extracting table values for date: {date}")
 
     def _set_values_combo_box(self, city_name, date: datetime):
-        #date.strftime('%d-%m-%y')
+
         return {
             "provincia": city_name,
             "giorno": '{:02d}'.format(date.day),
