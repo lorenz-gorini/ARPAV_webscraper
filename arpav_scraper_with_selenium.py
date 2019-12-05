@@ -1,9 +1,7 @@
 import csv
 import datetime
-import os
-import requests
-
 from selenium import webdriver
+import os
 
 
 class TableCell:
@@ -39,7 +37,7 @@ class ArpavArchiveScraper:
         go_button = self.driver.find_elements_by_xpath("//input[@name='Vai' and @value='Visualizza il bollettino']")[0]
         go_button.click()
 
-    def _get_data_from_table_by_cityname(self, date_response, writer, city_name, date):
+    def _get_data_from_table_by_cityname(self, writer, city_name, date):
         """
         This function is meant to recreate and analyze the table on the website.
         The basic idea is to avoid to blindly pick the cell by its index, but trying to get that based on the pollutant
@@ -47,7 +45,7 @@ class ArpavArchiveScraper:
         In order to recognize and connect these columns with the table cells we had to analyze the x_coordinate of
         those cells.
         """
-        # TODO: Implement a way to use the response_data in HTML version and try to use them and navigate them by xpath
+
         # Retrieve data of the pollutants of the first row and the categories of the second row
         pollutant_list = [{'text': t.text, 'x': t.location['x']} for t in
                           self.driver.find_elements_by_xpath("//div[@id='ariadativalidati']/table/tbody/tr[1]/td")]
@@ -59,7 +57,7 @@ class ArpavArchiveScraper:
             self._link_meas_info_to_pollutant_columns(pollutant_list=pollutant_list,
                                                       measurement_info=measurement_info)
 
-            measurement_units = [{'meas_units': t.text, 'x': t.location['x']} for t in
+            measurement_units = [{'meas_units': t.text, 'x': t.location['x']}  for t in
                                  self.driver.find_elements_by_xpath("//div[@id='ariadativalidati']/table/tbody/tr[3]/td")]
             self._link_meas_units_to_meas_info_columns(measurement_info=measurement_info,
                                                        measurement_units=measurement_units)
@@ -92,10 +90,9 @@ class ArpavArchiveScraper:
             print(f"There is no air pollution info for the date {date}")
             return 0
 
-    def _set_post_request_data(self, city_name, date: datetime):
+    def _set_values_combo_box(self, city_name, date: datetime):
 
         return {
-            "Vai": 'Visualizza il bollettino',
             "provincia": city_name,
             "giorno": '{:02d}'.format(date.day),
             "mese": '{:02d}'.format(date.month),
@@ -136,11 +133,8 @@ class ArpavArchiveScraper:
                     break
 
     def retrieve_and_write_single_data_from_website(self, writer, city_name, date: datetime):
-
-        post_data = self._set_post_request_data(city_name=city_name, date=date)
-        date_response = requests.post(self.arpav_air_data_archive_url, data=post_data)
-
-        return_code = self._get_data_from_table_by_cityname(date_response=date_response, writer=writer, city_name=city_name, date=date)
+        self._select_day_date_on_archive_portal(city_name=city_name, date=date)
+        return_code = self._get_data_from_table_by_cityname(writer=writer, city_name=city_name, date=date)
         return return_code
 
 class DataArchive:
@@ -203,3 +197,17 @@ if __name__ == "__main__":
     data_archive = DataArchive(fieldnames=fieldnames, arpav_archives_dir=arpav_archives_dir)
     data_archive.scrape_and_archive_data_by_year(starting_date=starting_date, last_year=2020)
 
+    # csv_file, writer = None, None
+    # for day_id in range(365*(2020-2011)):
+    #     day_date = starting_date + datetime.timedelta(days=day_id)
+    #     arpav_file_dir = os.path.join(arpav_archives_dir,
+    #                                   f'{day_date.year}/{day_date.month}',
+    #                                   f'{day_date.year}_{day_date.month}_arpav_data.csv')
+    #     if not os.path.exists(arpav_file_dir):
+    #         _prepare_the_file
+    #     if writer is None:
+    #         # The file is already there. Delete it first
+    #         print(f"ERROR: There is already a file named: {arpav_file_dir}. Delete it and restart the script.")
+    #     arpav_scraper.retrieve_single_data_from_website(writer=writer,
+    #                                                     city_name="Belluno",
+    #                                                     date=day_date)

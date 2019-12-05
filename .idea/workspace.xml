@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca10f571-51b8-42fe-9d0e-14c610005add" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/arpav_scraper_with_selenium.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/arpav-web-scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/arpav-web-scraper.py" afterDir="false" />
     </list>
@@ -34,7 +35,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.arpav_scraper_with_selenium">
     <configuration name="arpav-web-scraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ARPAV_webscraper_air" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -57,8 +58,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="arpav_scraper_with_selenium" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ARPAV_webscraper_air" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/arpav_scraper_with_selenium.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.arpav_scraper_with_selenium" />
         <item itemvalue="Python.arpav-web-scraper" />
       </list>
     </recent_temporary>
@@ -87,8 +111,16 @@
       <updated>1575388395618</updated>
       <workItem from="1575388402803" duration="15800000" />
       <workItem from="1575478932640" duration="2299000" />
-      <workItem from="1575537526747" duration="7717000" />
+      <workItem from="1575537526747" duration="14047000" />
     </task>
+    <task id="LOCAL-00001" summary="Fully working script">
+      <created>1575553515845</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575553515845</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,60 +130,62 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/ARPAV_webscraper" />
     </ignored-roots>
+    <MESSAGE value="Fully working script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fully working script" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2478" y="135" key="CommitChangelistDialog2" timestamp="1575481366235">
+    <state x="2478" y="135" key="CommitChangelistDialog2" timestamp="1575553515698">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2478" y="135" key="CommitChangelistDialog2/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575481366235" />
-    <state width="1874" height="219" key="GridCell.Tab.0.bottom" timestamp="1575549567107">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state x="2478" y="135" key="CommitChangelistDialog2/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575553515698" />
+    <state width="1874" height="286" key="GridCell.Tab.0.bottom" timestamp="1575570094810">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1575549567107" />
-    <state width="1874" height="486" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575481111035" />
-    <state width="1874" height="219" key="GridCell.Tab.0.center" timestamp="1575549567107">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575570094810" />
+    <state width="1874" height="286" key="GridCell.Tab.0.center" timestamp="1575570094809">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1575549567107" />
-    <state width="1874" height="486" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575481111035" />
-    <state width="1874" height="219" key="GridCell.Tab.0.left" timestamp="1575549567106">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="286" key="GridCell.Tab.0.center/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575570094809" />
+    <state width="1874" height="286" key="GridCell.Tab.0.left" timestamp="1575570094809">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1575549567106" />
-    <state width="1874" height="486" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575481111035" />
-    <state width="1874" height="219" key="GridCell.Tab.0.right" timestamp="1575549567107">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="286" key="GridCell.Tab.0.left/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575570094809" />
+    <state width="1874" height="286" key="GridCell.Tab.0.right" timestamp="1575570094810">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1575549567107" />
-    <state width="1874" height="486" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575481111035" />
-    <state width="1874" height="219" key="GridCell.Tab.1.bottom" timestamp="1575549531905">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="286" key="GridCell.Tab.0.right/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575570094810" />
+    <state width="1874" height="563" key="GridCell.Tab.1.bottom" timestamp="1575569935194">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.1.bottom/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1575549531905" />
-    <state width="1874" height="486" key="GridCell.Tab.1.bottom/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575481120264" />
-    <state width="1874" height="219" key="GridCell.Tab.1.center" timestamp="1575549531905">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="563" key="GridCell.Tab.1.bottom/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575569935194" />
+    <state width="1874" height="563" key="GridCell.Tab.1.center" timestamp="1575569935194">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.1.center/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1575549531905" />
-    <state width="1874" height="486" key="GridCell.Tab.1.center/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575481120264" />
-    <state width="1874" height="219" key="GridCell.Tab.1.left" timestamp="1575549531905">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="563" key="GridCell.Tab.1.center/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575569935194" />
+    <state width="1874" height="563" key="GridCell.Tab.1.left" timestamp="1575569935193">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.1.left/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1575549531905" />
-    <state width="1874" height="486" key="GridCell.Tab.1.left/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575481120264" />
-    <state width="1874" height="219" key="GridCell.Tab.1.right" timestamp="1575549531905">
-      <screen x="0" y="0" width="1920" height="1044" />
+    <state width="1874" height="563" key="GridCell.Tab.1.left/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575569935193" />
+    <state width="1874" height="563" key="GridCell.Tab.1.right" timestamp="1575569935194">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1874" height="219" key="GridCell.Tab.1.right/0.0.1920.1044/1920.0.1920.1080@0.0.1920.1044" timestamp="1575549531905" />
-    <state width="1874" height="486" key="GridCell.Tab.1.right/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575481120264" />
+    <state width="1874" height="563" key="GridCell.Tab.1.right/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575569935194" />
     <state x="2377" y="173" key="SettingsEditor" timestamp="1575478973239">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2377" y="173" key="SettingsEditor/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575478973239" />
-    <state x="2476" y="274" key="Vcs.Push.Dialog.v2" timestamp="1575481368364">
+    <state x="2476" y="274" key="Vcs.Push.Dialog.v2" timestamp="1575553518156">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2476" y="274" key="Vcs.Push.Dialog.v2/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575481368364" />
+    <state x="2476" y="274" key="Vcs.Push.Dialog.v2/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575553518156" />
     <state width="960" height="540" key="XDebugger.FullValuePopup" timestamp="1575398032334">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -164,8 +198,31 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2485" y="93" width="789" height="894" key="find.popup/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575396315780" />
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1575555099950">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup/0.0.1920.1044/1920.0.1920.1080@1920.0.1920.1080" timestamp="1575555099950" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/arpav_scraper_with_selenium.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/arpav_scraper_with_selenium.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/arpav_scraper_with_selenium.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="measurement_units[3]" />
@@ -175,6 +232,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ARPAV_webscraper_air$arpav_web_scraper.coverage" NAME="arpav-web-scraper Coverage Results" MODIFIED="1575407948555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ARPAV_webscraper$arpav_web_scraper.coverage" NAME="arpav-web-scraper Coverage Results" MODIFIED="1575549529576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ARPAV_webscraper$arpav_scraper_with_selenium.coverage" NAME="arpav_scraper_with_selenium Coverage Results" MODIFIED="1575569976787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ARPAV_webscraper$arpav_web_scraper.coverage" NAME="arpav-web-scraper Coverage Results" MODIFIED="1575569656470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
